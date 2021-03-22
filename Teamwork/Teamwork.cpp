@@ -106,7 +106,7 @@ int ControlWithMask(unsigned int num1,unsigned int num2)
     {
         cout << binario2[a];
     }
- /*   if (binario1[26] == 0) {
+    if (binario1[26] == 0) {
         cout << "Correct" << endl;
     }
     else {
@@ -120,7 +120,7 @@ int ControlWithMask(unsigned int num1,unsigned int num2)
         cout << "Hubo algún fallo" << endl;
         exit(1);
     }
-}*/
+}
 //string toBinary(int n)
 //{
 //    string r;
