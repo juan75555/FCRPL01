@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bitset>
+#include <iomanip>
 using namespace std;
 extern "C" bool IsValidAssembly(int a, int b, int c);
 
@@ -8,7 +9,7 @@ void controlString(char* cadena,char* cadena2) {
         cout << "Acceso Permitido" << endl;
     }
     else {
-       cout << "Acceso Denegado" << endl;
+        cout << "Acceso Denegado" << endl;
         exit(1);
     }
     if (strlen(cadena2) <= 10 && cadena2[0] == cadena2[9]) {
@@ -52,7 +53,7 @@ int CheckInlineAsmAccess(std::bitset<32> bs6)
 }
 else {
     cout << "Entrada incorrecta" << endl;
-   exit(1);
+    exit(1);
 }
    /* __asm 
     {
@@ -172,7 +173,7 @@ else {
         push        1
         call        dword ptr[__imp__exit(0406144h)]
     }*/
-   return 0;
+    return 0;
 }
 
 string Decimal_Binario(int n)
@@ -189,7 +190,7 @@ string Decimal_Binario(int n)
     return r;
 }
 
-int Binario_Decimal(int x,double decimal) {
+int Binario_Decimal(int x,int decimal) {
     int exp, digito;
     exp = 0;
     decimal = 0;
@@ -211,10 +212,10 @@ int main()
     char cadena2[10];
     unsigned int num1;
     unsigned int num2;
-    int num6;*/
-    int a;
-    int b;
-    int c;
+    int num6;
+    //int a;
+    //int b;
+    //int c;
     double decimal;
     
     cout << "Introduce una cadena: ";
@@ -233,7 +234,7 @@ int main()
     cin >> num2;
     cout << num2 << endl;
 
-   cout << "Introduce el num3 (entero): ";
+ /*   cout << "Introduce el num3 (entero): ";
     cin >> a;
     cout << a << endl;
 
@@ -250,7 +251,6 @@ int main()
     cout << num6 << endl;
   bitset<32> bs1(Decimal_Binario(num1));
   bitset<32> bs2(Decimal_Binario(num2));
-  cout << bs2;
   bitset<32> bs6(Decimal_Binario(num6));
   int x = bs2[4]+bs2[5]+bs2[6];
   Binario_Decimal(x,decimal);
