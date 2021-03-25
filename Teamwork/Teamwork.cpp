@@ -1,6 +1,5 @@
 #include <iostream>
 #include <bitset>
-#include <iomanip>
 using namespace std;
 extern "C" bool IsValidAssembly(int a, int b, int c);
 
