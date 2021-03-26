@@ -86,6 +86,127 @@ else {
     return false;
     exit(1);
 } 
+  
+
+//   /* __asm 
+ 
+//    {
+//        push        13h
+//        lea         eax, [ebp - 54h]
+//        push        eax
+//        lea         ecx, [bs6]
+//        call        std::bitset<32>::operator[] (04026F0h)
+//        mov         dword ptr[ebp - 1Ch], eax
+//        mov         ecx, dword ptr[ebp - 1Ch]
+//        mov         dword ptr[ebp - 20h], ecx
+//        mov         dword ptr[ebp - 4], 0
+//        mov         edx, dword ptr[ebp - 14h]
+//        or edx, 1
+//        mov         dword ptr[ebp - 14h], edx
+//        mov         ecx, dword ptr[ebp - 20h]
+//        call        std::bitset<32>::reference::operator bool(0402740h)
+//        movzx       esi, al
+//        push        12h
+//        lea         eax, [ebp - 4Ch]
+//        push        eax
+//        lea         ecx, [bs6]
+//        call        std::bitset<32>::operator[] (04026F0h)
+//        mov         dword ptr[ebp - 24h], eax
+//        mov         ecx, dword ptr[ebp - 24h]
+//        mov         dword ptr[ebp - 28h], ecx
+//        mov         dword ptr[ebp - 4], 1
+//        mov         edx, dword ptr[ebp - 14h]
+//        or edx, 2
+//        mov         dword ptr[ebp - 14h], edx
+//        mov         ecx, dword ptr[ebp - 28h]
+//        call        std::bitset<32>::reference::operator bool(0402740h)
+//        movzx       eax, al
+//        cmp         esi, eax
+//        jne         CheckInlineAsmAccess + 0F9h(04010F9h)
+//        push        13h
+//        lea         ecx, [ebp - 44h]
+//        push        ecx
+//        lea         ecx, [bs6]
+//        call        std::bitset<32>::operator[] (04026F0h)
+//        mov         dword ptr[ebp - 2Ch], eax
+//        mov         edx, dword ptr[ebp - 2Ch]
+//        mov         dword ptr[ebp - 30h], edx
+//        mov         dword ptr[ebp - 4], 2
+//        mov         eax, dword ptr[ebp - 14h]
+//        or eax, 4
+//        mov         dword ptr[ebp - 14h], eax
+//        mov         ecx, dword ptr[ebp - 30h]
+//        call        std::bitset<32>::reference::operator bool(0402740h)
+//        movzx       esi, al
+//        push        0Dh
+//        lea         ecx, [ebp - 3Ch]
+//        push        ecx
+//        lea         ecx, [bs6]
+//        call        std::bitset<32>::operator[] (04026F0h)
+//        mov         dword ptr[ebp - 34h], eax
+//        mov         edx, dword ptr[ebp - 14h]
+//        or edx, 8
+//        mov         dword ptr[ebp - 14h], edx
+//        mov         ecx, dword ptr[ebp - 34h]
+//        call        std::bitset<32>::reference::operator bool(0402740h)
+//        movzx       eax, al
+//        cmp         esi, eax
+//        je          CheckInlineAsmAccess + 0F9h(04010F9h)
+//        mov         dword ptr[ebp - 18h], 1
+//        jmp         CheckInlineAsmAccess + 100h(0401100h)
+//        mov         dword ptr[ebp - 18h], 0
+//        mov         cl, byte ptr[ebp - 18h]
+//        mov         byte ptr[ebp - 0Dh], cl
+//        mov         edx, dword ptr[ebp - 14h]
+//        and edx, 8
+//        je          CheckInlineAsmAccess + 11Ah(040111Ah)
+//        and dword ptr[ebp - 14h], 0FFFFFFF7h
+//        lea         ecx, [ebp - 3Ch]
+//        call        std::bitset<32>::reference::~reference(0402630h)
+//        mov         dword ptr[ebp - 4], 1
+//        mov         eax, dword ptr[ebp - 14h]
+//        and eax, 4
+//        je          CheckInlineAsmAccess + 135h(0401135h)
+//        and dword ptr[ebp - 14h], 0FFFFFFFBh
+//        lea         ecx, [ebp - 44h]
+//        call        std::bitset<32>::reference::~reference(0402630h)
+//        mov         dword ptr[ebp - 4], 0
+//        mov         ecx, dword ptr[ebp - 14h]
+//        and ecx, 2
+//        je          CheckInlineAsmAccess + 150h(0401150h)
+//        and dword ptr[ebp - 14h], 0FFFFFFFDh
+//        lea         ecx, [ebp - 4Ch]
+//        call        std::bitset<32>::reference::~reference(0402630h)
+//        mov         dword ptr[ebp - 4], 0FFFFFFFFh
+//        mov         edx, dword ptr[ebp - 14h]
+//        and edx, 1
+//        je          CheckInlineAsmAccess + 16Bh(040116Bh)
+//        and dword ptr[ebp - 14h], 0FFFFFFFEh
+//        lea         ecx, [ebp - 54h]
+//        call        std::bitset<32>::reference::~reference(0402630h)
+//        movzx       eax, byte ptr[ebp - 0Dh]
+//        test        eax, eax
+//        je          CheckInlineAsmAccess + 196h(0401196h)
+//        push        offset std::endl<char, std::char_traits<char> >(0401EB0h)
+//        push        4063C0h
+//        mov         ecx, dword ptr[__imp_std::cout(0406060h)]
+//        push        ecx
+//        call        std::operator<<<std::char_traits<char> > (0401460h)
+//        add         esp, 8
+//        mov         ecx, eax
+//        call        dword ptr[__imp_std::basic_ostream<char, std::char_traits<char> >::operator<< (0406048h)]
+//        jmp         CheckInlineAsmAccess + 1BFh(04011BFh)
+//        push        offset std::endl<char, std::char_traits<char> >(0401EB0h)
+//        push        4063D4h
+//        mov         edx, dword ptr[__imp_std::cout(0406060h)]
+//        push        edx
+//        call        std::operator<<<std::char_traits<char> > (0401460h)
+//        add         esp, 8
+//        mov         ecx, eax
+//        call        dword ptr[__imp_std::basic_ostream<char, std::char_traits<char> >::operator<< (0406048h)]
+//        push        1
+//        call        dword ptr[__imp__exit(0406144h)]
+//    }*/
     return 0;
 }
 
