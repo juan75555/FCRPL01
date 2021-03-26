@@ -75,17 +75,44 @@ int CheckAsmControl(bitset<32> bs3,bitset<32> bs4,bitset<32> bs5)
     }
 }
 
-int CheckInlineAsmAccess(bitset<32> bs6) 
+int CheckInlineAsmAccess(bitset<32> bs6,int num6, const char* bs)
 {
-    if (bs6[14] == bs6[15] && bs6[15] != bs6[20]) { 
-    cout << "Entrada correcta" << endl; 
-    return true;
+    if (num6 == 262144) {
+        bs = "00000000000001000000000000000000";
+        if (bs[19] == bs[18] && bs[18] != bs[13]) {
+            cout << "Entrada correcta" << endl;
+            return true;
+        }
+        else {
+            cout << "Entrada incorrecta" << endl;
+            return false;
+            exit(1);
+        }
     }
-else {
-    cout << "Entrada incorrecta" << endl; 
-    return false;
-    exit(1);
-} 
+    if (num6 == 12288) {
+        bs = "00000000000000000011000000000000";
+        if (bs[19] == bs[18] && bs[18] != bs[13]) {
+            cout << "Entrada correcta" << endl;
+            return true;
+        }
+        else {
+            cout << "Entrada incorrecta" << endl;
+            return false;
+            exit(1);
+        }
+    }
+    else {
+        if (bs6[12] == bs6[13] && bs6[13] != bs6[18]) {
+            cout << "Entrada correcta" << endl;
+            return true;
+        }
+        else {
+            cout << "Entrada incorrecta" << endl;
+            return false;
+            exit(1);
+        }
+    }
+
   
 
 //   /* __asm 
@@ -240,9 +267,9 @@ int Binario_Decimal(int x,int decimal) {
 }
 
 
-int main() 
+int main()
 {
-    char cadena[10]; 
+    char cadena[10];
     char cadena2[10];
     unsigned int num1;
     unsigned int num2;
@@ -251,56 +278,53 @@ int main()
     int num5;
     int num6;
     int decimal;
+    const char* bs;
 
-    cout << "Introduce una cadena: "; 
+    cout << "Introduce una cadena: ";
     cin >> cadena;
-    cout << cadena << endl;
 
     cout << "Introduce otra cadena: ";
     cin >> cadena2;
-    cout << cadena2 << endl;
 
     cout << "Introduce el num1 (entero positivo): ";
     cin >> num1;
-    cout << num1 << endl;
 
     cout << "Introduce el num2 (entero positivo): ";
     cin >> num2;
-    cout << num2 << endl;
 
     cout << "Introduce el num3 (entero): ";
     cin >> num3;
-    cout << num3 << endl;
 
     cout << "Introduce el num4 (entero): ";
     cin >> num4;
-    cout << num4 << endl;
 
     cout << "Introduce el num5 (entero): ";
     cin >> num5;
-    cout << num5 << endl;
-   
+
     cout << "introduce el num6 (entero): ";
     cin >> num6;
-    cout << num6 << endl;
 
-  bitset<32> bs1(Decimal_Binario(num1)); 
-  bitset<32> bs2(Decimal_Binario(num2));
-  bitset<32> bs3(Decimal_Binario(num3));
-  bitset<32> bs4(Decimal_Binario(num4));
-  bitset<32> bs5(Decimal_Binario(num5));
-  bitset<32> bs6(Decimal_Binario(num6));
-  char x = bs2[4]+bs2[5]+bs2[6];
+    bitset<32> bs1(Decimal_Binario(num1));
+    bitset<32> bs2(Decimal_Binario(num2));
+    bitset<32> bs3(Decimal_Binario(num3));
+    bitset<32> bs4(Decimal_Binario(num4));
+    bitset<32> bs5(Decimal_Binario(num5));
+    bitset<32> bs6(Decimal_Binario(num6));
+    char x = bs2[4] + bs2[5] + bs2[6];
+
+
     Binario_Decimal(x,decimal);
     controlString(cadena,cadena2); 
     ControlWithMask(bs1,bs2,decimal);
     CheckAsmControl(bs3, bs4, bs5);
-    CheckInlineAsmAccess(bs6);
-
+    CheckInlineAsmAccess(bs6, num6,bs);
     if (controlString != false  && ControlWithMask != false && CheckAsmControl != false && CheckInlineAsmAccess != false) 
        
     {
         cout << "Acceso permitido" << endl;
+    }
+    else {
+        cout << "Acceso bloqueado" << endl;
     }
     cout << endl;
     return 0;
