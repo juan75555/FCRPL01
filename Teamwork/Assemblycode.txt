@@ -1,0 +1,157 @@
+push        ebp  
+ mov         ebp,esp  
+ push        0FFFFFFFFh  
+ push        406CF7h  
+ mov         eax,dword ptr fs:[00000000h]  
+ push        eax  
+ mov         dword ptr fs:[0],esp  
+ sub         esp,30h  
+ push        esi  
+ mov         dword ptr [ebp-14h],0  
+ mov         ecx,offset _22C68F67_Teamwork@cpp (040B029h)  
+ call        __CheckForDebuggerJustMyCode (0404F00h)  
+ mov         dword ptr [num180],9A4494h  
+ push        0  
+ lea         eax,[ebp-3Ch]  
+ push        eax  
+ lea         ecx,[bs3]  
+ call        std::bitset<32>::operator[] (0403880h)  
+ mov         dword ptr [ebp-1Ch],eax  
+ mov         ecx,dword ptr [ebp-1Ch]  
+ mov         dword ptr [ebp-20h],ecx  
+ mov         dword ptr [ebp-4],0  
+ mov         edx,dword ptr [ebp-14h]  
+ or          edx,1  
+ mov         dword ptr [ebp-14h],edx  
+ mov         ecx,dword ptr [ebp-20h]  
+ call        std::bitset<32>::reference::operator bool (04038D0h)  
+ movzx       esi,al  
+ push        11h  
+ lea         eax,[ebp-34h]  
+ push        eax  
+ lea         ecx,[bs5]  
+ call        std::bitset<32>::operator[] (0403880h)  
+ mov         dword ptr [ebp-24h],eax  
+ mov         ecx,dword ptr [ebp-24h]  
+ mov         dword ptr [ebp-28h],ecx  
+ mov         dword ptr [ebp-4],1  
+ mov         edx,dword ptr [ebp-14h]  
+ or          edx,2  
+ mov         dword ptr [ebp-14h],edx  
+ mov         ecx,dword ptr [ebp-28h]  
+ call        std::bitset<32>::reference::operator bool (04038D0h)  
+ movzx       eax,al  
+ cmp         esi,eax  
+ jne         CheckAsmControl+0B2h (04010D2h)  
+ lea         ecx,[bs3]  
+ call        std::bitset<32>::to_ulong (0404B00h)  
+ cmp         eax,dword ptr [num180]  
+ jle         CheckAsmControl+0B2h (04010D2h)  
+ mov         dword ptr [ebp-18h],1  
+ jmp         CheckAsmControl+0B9h (04010D9h)  
+ mov         dword ptr [ebp-18h],0  
+ mov         cl,byte ptr [ebp-18h]  
+ mov         byte ptr [ebp-0Dh],cl  
+ mov         dword ptr [ebp-4],0  
+ mov         edx,dword ptr [ebp-14h]  
+ and         edx,2  
+ je          CheckAsmControl+0DAh (04010FAh)  
+ and         dword ptr [ebp-14h],0FFFFFFFDh  
+ lea         ecx,[ebp-34h]  
+ call        std::bitset<32>::reference::~reference (0403740h)  
+ mov         dword ptr [ebp-4],0FFFFFFFFh  
+ mov         eax,dword ptr [ebp-14h]  
+ and         eax,1  
+ je          CheckAsmControl+0F5h (0401115h)  
+ and         dword ptr [ebp-14h],0FFFFFFFEh  
+ lea         ecx,[ebp-3Ch]  
+ call        std::bitset<32>::reference::~reference (0403740h)  
+ movzx       ecx,byte ptr [ebp-0Dh]  
+ test        ecx,ecx  
+ je          CheckAsmControl+193h (04011B3h)  
+ push        4073E8h  
+ lea         edx,[bs3]  
+ push        edx  
+ mov         eax,dword ptr [__imp_std::cout (0407078h)]  
+ push        eax  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ push        4073ECh  
+ lea         ecx,[bs4]  
+ push        ecx  
+ mov         edx,dword ptr [__imp_std::cout (0407078h)]  
+ push        edx  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+push        4073F0h  
+ lea         eax,[bs5]  
+ push        eax  
+ mov         ecx,dword ptr [__imp_std::cout (0407078h)]  
+ push        ecx  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ push        offset std::endl<char,std::char_traits<char> > (0402AD0h)  
+ push        4073F4h  
+ mov         edx,dword ptr [__imp_std::cout (0407078h)]  
+ push        edx  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ mov         ecx,eax  
+ call        dword ptr [__imp_std::basic_ostream<char,std::char_traits<char> >::operator<< (040705Ch)]  
+ mov         eax,1  
+ jmp         CheckAsmControl+217h (0401237h)
+ jmp         CheckAsmControl+217h (0401237h)
+ push        4073FCh  
+ lea         eax,[bs3]  
+ push        eax  
+ mov         ecx,dword ptr [__imp_std::cout (0407078h)]  
+ push        ecx  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ push        407400h  
+ lea         edx,[bs4]  
+ push        edx  
+ mov         eax,dword ptr [__imp_std::cout (0407078h)]  
+ push        eax  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ push        407404h  
+ lea         ecx,[bs5]  
+ push        ecx  
+ mov         edx,dword ptr [__imp_std::cout (0407078h)]  
+ push        edx  
+ call        std::operator<<<char,std::char_traits<char>,32> (0401950h)  
+ add         esp,8  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ push        offset std::endl<char,std::char_traits<char> > (0402AD0h)  
+ push        407408h  
+ mov         eax,dword ptr [__imp_std::cout (0407078h)]  
+ push        eax  
+ call        std::operator<<<std::char_traits<char> > (0401A60h)  
+ add         esp,8  
+ mov         ecx,eax  
+ call        dword ptr [__imp_std::basic_ostream<char,std::char_traits<char> >::operator<< (040705Ch)]  
+ xor         eax,eax 
+  mov         ecx,dword ptr [ebp-0Ch]  
+ mov         dword ptr fs:[0],ecx  
+ pop         esi  
+ mov         esp,ebp  
+ pop         ebp  
+ ret  

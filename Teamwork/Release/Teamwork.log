@@ -1,0 +1,10 @@
+﻿  Assembling Assembly-code.asm...
+  Teamwork.cpp
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(37,5): error C3861: 'controlString': no se encontró el identificador
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(38,13): error C3861: 'ControlWithMask': no se encontró el identificador
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(42,34): warning C4459: la declaración de 'cadena' oculta la declaración global
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(4,6): message : vea la declaración de 'cadena'
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(59,34): warning C4459: la declaración de 'num1' oculta la declaración global
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(5,14): message : vea la declaración de 'num1'
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(59,52): warning C4459: la declaración de 'num2' oculta la declaración global
+C:\Users\juan7\Desktop\Teamwork\Teamwork.cpp(6,14): message : vea la declaración de 'num2'
