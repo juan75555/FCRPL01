@@ -1,0 +1,4 @@
+﻿  Assembling Assembly-code.asm...
+Assembly-code.asm(1): error A2008: syntax error : .
+Assembly-code.asm(2): error A2008: syntax error : .
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets(70,5): error MSB3721: El comando "ml64.exe /c /nologo /Zi /Fo"x64\Debug\Assembly-code.obj" /W3 /errorReport:prompt  /Ta"Assembly-code.asm"" salió con el código 1.
